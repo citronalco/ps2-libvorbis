@@ -1,4 +1,4 @@
-This is Xiph's ogg source code (see https://git.xiph.org/vorbis.git), I only created a Makefile for Playstation 2's PS2SDK.
+This is Xiph's vorbis source code (see https://git.xiph.org/vorbis.git), I only created a Makefile for Playstation 2's PS2SDK.
 
 Build with:
 make -f Makefile.ps2
