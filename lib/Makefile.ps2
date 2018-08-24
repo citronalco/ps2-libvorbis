@@ -1,0 +1,19 @@
+CC	= ee-gcc
+
+CFLAGS = -I $(PS2SDK)/ports/include -I ../include -I . -fsigned-char -D_REENTRANT -O3 -ffast-math
+
+EE_TARGET = libvorbis.a
+
+EE_OBJS = analysis.o barkmel.o bitrate.o block.o codebook.o envelope.o floor0.o floor1.o info.o lookup.o lpc.o lsp.o mapping0.o mdct.o psy.o registry.o res0.o sharedbook.o smallft.o synthesis.o vorbisfile.o window.o
+
+all: $(EE_TARGET)
+
+clean:
+	rm -f $(EE_TARGET) $(EE_OBJS)
+
+$(EE_TARGET): $(EE_OBJS)
+	ar rv $(EE_TARGET) $(EE_OBJS)
+	ranlib $(EE_TARGET)
+
+%.o: %.c
+	$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@

@@ -1,0 +1,11 @@
+all: 
+	$(MAKE) -C lib -f Makefile.ps2
+
+clean:
+	$(MAKE) -C lib -f Makefile.ps2
+
+install:
+	mkdir -p $(DESTDIR)$(PS2SDK)/ports/include/vorbis/
+	mkdir -p $(DESTDIR)$(PS2SDK)/ports/lib/
+	cp -f include/vorbis/*h $(DESTDIR)$(PS2SDK)/ports/include/vorbis/
+	cp -f lib/libvorbis.a $(DESTDIR)$(PS2SDK)/ports/lib/
