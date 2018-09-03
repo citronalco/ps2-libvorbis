@@ -2,7 +2,7 @@ all:
 	$(MAKE) -C lib -f Makefile.ps2
 
 clean:
-	$(MAKE) -C lib -f Makefile.ps2
+	$(MAKE) -C lib -f Makefile.ps2 clean
 
 install:
 	mkdir -p $(DESTDIR)$(PS2SDK)/ports/include/vorbis/
